@@ -89,18 +89,52 @@ $(document).ready(function () {
 
       var userAnswer;
       //Display the results to the user
-      for (var i = 0; i < questions.length; i++){
-        //for (var j = 0; j < 4; j++){
-          //var userAnswer = $(".right-choice input:checked").val();
-          if(userAnswer === questions[i].correctAnswer){
+      // for (var i = 0; i < questions.length; i++){
+      //     //console.log($("#inRadioButton0").val)
+      //     //var isChk = $("#inRadioButton" + j).isChecked;
+      //     console.log($("input:checked").val());
+      //     if($("input:checked").val() === questions[i].correctAnswer){
+      //       this.correct++;
+      //     }
+      //     else{
+      //       this.incorrect++;
+      //     }
+      // }
+      
+      var i = 0;
+      $.each($("input:checked"), function( index, value){
+          if value === questions[index].correctAnswer{
             this.correct++;
           }
           else{
             this.incorrect++;
           }
-        //}
-      }
+      })
+     
+      // $('input:radio:checked').each(function () {
+      //   // Iterate through all checked radio buttons
+      //   if ($("input:checked").val() === questions[i].correctAnswer) {
+      //     this.correct++;
+      //   }
+      //   else {
+      //     this.incorrect++
+      //   }
+      //   i++
+      // });
 
+      // var i = 0;
+      // $("input:checked").each(function () {
+      //     if ($("input:checked").val() === questions[i].correctAnswer){
+      //         this.correct++;
+      //       }
+      //     else{
+      //       this.incorrect++;
+      //     }
+      //     i++;
+      // });
+
+      console.log(this.correct);
+      console.log(this.incorrect);
       //$("#quizDiv").html("<br><br><p>Here are your results:</p>");
       //$("#quizDiv").append("Number of correct answers:  " + this.correct);
       //$("#quizDiv").append("<br>Number of incorrect answers:  " + this.incorrect);
@@ -131,8 +165,9 @@ $(document).ready(function () {
           answerInput.addClass("radio-inline");
           answerInput.attr("type", "radio");
           //inlineCheckbox
-          answerInput.attr("id", "#inRadioButton" + j);
-          answerInput.attr("value", "option" + j);
+          answerInput.attr("id", "inRadioButton" + j);
+          //"option" + j --> option0, option1, ...
+          answerInput.attr("value", questions[i].answers[j]);
           //Added this line, below.
           answerInput.attr("name", questions[i].correctAnswer);
           newAnswer.append(answerInput);
