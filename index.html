@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Totally Trivia Game!</title>
+    <!-- HTML, CSS, and Javascript code written by:  Matthew J. Huberty -->
+    <!-- Homework #4 Project for UC Davis Coding Bootcamp, July 21, 2018. -->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- Load CSS Bootstrap... -->
+    <!-- Bootstrap File -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Load the Jquery library -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+        </script>
+    <!-- Load your personalized Javascript -->
+    <script src="assets/javascript/app.js"> </script>
+</head>
+
+<body>
+    <!--Build the HTML code, below-->
+    <div="container-fluid">
+        <div class="row">
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <div class="card sticky-top">
+                    <div class="imagesheader">
+                        <img class="img-responsive left-block" src="assets/images/brain.png" alt="Card image cap">
+                        <img class="img-responsive right-block" src="assets/images/brainiac.gif" alt="Card image cap">
+                    </div>
+                    <div class="card-body p-3 mb-2 bg-info text-white text-center">
+                        <h2 class="card-title">Very cool vocabulary quiz!!!</h2>
+                        <p class="card-text prompt">Pick your choices, below and work quickly!</p>
+                        <p class="card-text" id="timer"></p>
+                    </div>
+                    <div class="listcontainer">
+                        <div id="myDiv">
+                            <button class="start-button"> Click Me to Start the vocabulary quiz!</button>
+                            <!-- Hide the table until the button is clicked -->
+                        </div>
+                        <ul class="list-group list-group-flush" id="quizDiv">
+                            <!--Build dynamic HTML code, via Javascript & JQuery:  here.  -->
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <!-- Add a button, below -->
+                        <button id="submit" class="card-link">Submit Quiz</button>
+                        <!-- <a href="#" class="card-link">Another link</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+        <div class="row">
+            <br>
+            <br> 
+            <br>
+            <br>
+        </div>
+        </div>
+</body>
+
+</html>
