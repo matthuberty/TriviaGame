@@ -75,6 +75,7 @@ $(document).ready(function () {
     },
 
     done: function () {
+      console.log(this);
       // TODO Check correct answers
       //Hide the id = quizDiv & id = timer
       //UNHIDE THE NEXT 3 LINES, AT SOME POINT, WHEN
@@ -84,60 +85,32 @@ $(document).ready(function () {
       $("#submit").hide();
       clearInterval(myTime);
       //Tabulate and calculate the # of correct and incorrect answers
-
-      //console.log($(".right-choice input:checked:").val());
-
-      var userAnswer;
       //Display the results to the user
-      // for (var i = 0; i < questions.length; i++){
-      //     //console.log($("#inRadioButton0").val)
-      //     //var isChk = $("#inRadioButton" + j).isChecked;
-      //     console.log($("input:checked").val());
-      //     if($("input:checked").val() === questions[i].correctAnswer){
-      //       this.correct++;
-      //     }
-      //     else{
-      //       this.incorrect++;
-      //     }
-      // }
       
-      var i = 0;
-      $.each($("input:checked"), function( index, value){
-          if value === questions[index].correctAnswer{
+      // console.log($("input:checked")[0].value);
+      // console.log($("input:checked")[0].name);
+      // console.log($("input:checked")[1].value);
+      // console.log($("input:checked")[1].name);
+      // console.log($("input:checked")[2].value);
+      // console.log($("input:checked")[2].name);
+      // console.log($("input:checked")[3].value);
+      // console.log($("input:checked")[3].name);
+      // console.log("The length is:  " + $("input:checked").length);
+
+console.log("checking "+game.correct);
+      for (var i = 0; i < $("input:checked").length; i++){
+          if($("input:checked")[i].value === $("input:checked")[i].name ){
             this.correct++;
+            console.log(this.correct);
           }
-          else{
-            this.incorrect++;
-          }
-      })
-     
-      // $('input:radio:checked').each(function () {
-      //   // Iterate through all checked radio buttons
-      //   if ($("input:checked").val() === questions[i].correctAnswer) {
-      //     this.correct++;
-      //   }
-      //   else {
-      //     this.incorrect++
-      //   }
-      //   i++
-      // });
+        }
+        this.incorrect = 11 - this.correct;
 
-      // var i = 0;
-      // $("input:checked").each(function () {
-      //     if ($("input:checked").val() === questions[i].correctAnswer){
-      //         this.correct++;
-      //       }
-      //     else{
-      //       this.incorrect++;
-      //     }
-      //     i++;
-      // });
-
-      console.log(this.correct);
-      console.log(this.incorrect);
-      //$("#quizDiv").html("<br><br><p>Here are your results:</p>");
-      //$("#quizDiv").append("Number of correct answers:  " + this.correct);
-      //$("#quizDiv").append("<br>Number of incorrect answers:  " + this.incorrect);
+      //console.log("Number correct:  " + this.correct);
+      //console.log("Number incorrect:  " + this.incorrect);
+      $("#quizDiv").html("<br><br><p>Here are your results:</p>");
+      $("#quizDiv").append("Number of correct answers:  " + this.correct);
+      $("#quizDiv").append("<br>Number of incorrect answers:  " + this.incorrect);
     },
 
     start: function () {
@@ -195,7 +168,10 @@ $(document).ready(function () {
 
   //Start the game when the start-button is clicked.
   $(".start-button").on("click", game.start);
-  $("submit").on("click", game.done);
+  $("#submit").on("click", function(){
+    game.done();
+  });
+
 
 }); // document . ready ends here
 
