@@ -61,7 +61,7 @@ $(document).ready(function () {
   var game = {
     correct: 0,
     incorrect: 0,
-    counter: 20,
+    counter: 25,
     myTime: 0,
 
     countdown: function (myTime) {
@@ -86,16 +86,6 @@ $(document).ready(function () {
       clearInterval(myTime);
       //Tabulate and calculate the # of correct and incorrect answers
       //Display the results to the user
-      
-      // console.log($("input:checked")[0].value);
-      // console.log($("input:checked")[0].name);
-      // console.log($("input:checked")[1].value);
-      // console.log($("input:checked")[1].name);
-      // console.log($("input:checked")[2].value);
-      // console.log($("input:checked")[2].name);
-      // console.log($("input:checked")[3].value);
-      // console.log($("input:checked")[3].name);
-      // console.log("The length is:  " + $("input:checked").length);
 
 console.log("checking "+game.correct);
       for (var i = 0; i < $("input:checked").length; i++){
@@ -106,8 +96,6 @@ console.log("checking "+game.correct);
         }
         this.incorrect = 11 - this.correct;
 
-      //console.log("Number correct:  " + this.correct);
-      //console.log("Number incorrect:  " + this.incorrect);
       $("#quizDiv").html("<br><br><p>Here are your results:</p>");
       $("#quizDiv").append("Number of correct answers:  " + this.correct);
       $("#quizDiv").append("<br>Number of incorrect answers:  " + this.incorrect);
@@ -173,6 +161,6 @@ console.log("checking "+game.correct);
   });
 
 
-}); // document . ready ends here
+}); 
 
 
